@@ -1,8 +1,8 @@
 import "./App.css";
 import React, {useEffect, useState} from 'react'
-import { Document } from './Document'
+import  Document  from './Document'
 
-export default function App() {
+ function App() {
 
 
   const [text, setText] = useState(null)
@@ -24,4 +24,5 @@ export default function App() {
   );
 }
 
+export default App
 
