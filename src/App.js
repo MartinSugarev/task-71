@@ -1,20 +1,26 @@
 import "./App.css";
+import React, {useEffect, useState} from 'react'
+import { Document } from './Document'
 
 function App() {
+
+
+  const [text, setText] = useState(null)
+
+  const fetchData = () => {
+      fetch('https://jaspervdj.be/lorem-markdownum/markdown.txt')
+      .then(response => response.text())
+      .then(data => {
+          setText(() => data)
+      })
+  }
+
+  useEffect(() => {
+     fetchData()  
+  }, [])
+
   return (
-    <div className="App">
-      <section class="hero">
-        <div class="hero-body">
-          <p class="title">A React Task</p>
-          <p class="subtitle">by Boom.dev</p>
-        </div>
-      </section>
-      <div class="container is-fullhd">
-        <div class="notification">
-          Edit the <code>./src</code> folder to add components.
-        </div>
-      </div>
-    </div>
+    <Document title={'Terms and Conditions'} content={text} />
   );
 }
 
