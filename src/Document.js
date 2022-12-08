@@ -28,10 +28,11 @@ export const Document = ({title, content}) => {
     useEffect(() => {
   const a = document.querySelector('.container').scrollTop + document.querySelector('.container').clientHeight
    
-  if(a >= btnPosition){
+  if(a === btnPosition){
       setActive(() => false)
   }
-    
+ 
+        
     }, [btnFromTop])
 
 
