@@ -16,8 +16,7 @@ import './Document.css'
     }
     
  }
-    return (
-        <>
+    return ( <>
         <h1 className="title">{props.title}</h1>
         <p onScroll={scroll} ref={ref}  className="content">{props.content}</p>
         <button disabled={active ? true : false} >I Agree</button>
