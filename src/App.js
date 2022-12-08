@@ -5,18 +5,16 @@ import  Document  from './Document'
  function App() {
 
 
-  const [text, setText] = useState(null)
+  const [text, setText] = useState('')
 
-  const fetchData = () => {
+  useEffect(() => {
+    
       fetch('https://jaspervdj.be/lorem-markdownum/markdown.txt')
       .then(response => response.text())
       .then(data => {
           setText(() => data)
       })
-  }
-
-  useEffect(() => {
-     fetchData()  
+  
   }, [])
 
   return (
