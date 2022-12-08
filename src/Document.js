@@ -5,35 +5,18 @@ import './Document.css'
 export const Document = ({title, content}) => {
 
     const [active, setActive] = useState(true)
-    const [btnFromTop, setBtnFromTop] = useState(null)
-    const [btnPosition,setBtnPosition] = useState(null) 
-
-    // useEffect(() => {
-    //     document.querySelector('.container').addEventListener('scroll', () => {
-    //   const length = document.querySelector('.container').scrollTop  
-    //  const btn =  document.querySelector('button').offsetTop
-    //  setBtnFromTop(length)
-    //  setBtnPosition(btn)
-    //   })
-    // }, [])
-
 
  const scroll = () => {
     const length = document.querySelector('.container').scrollTop  
     const btn =  document.querySelector('button').offsetTop
-    setBtnFromTop(length)
-    setBtnPosition(btn)
+    const a = length + document.querySelector('.container').clientHeight
+     
+    if(a >= btn){
+        setActive(() => false)
+    }
+    
  }
 
-    useEffect(() => {
-  const a = document.querySelector('.container').scrollTop + document.querySelector('.container').clientHeight
-   
-  if(a === btnPosition){
-      setActive(() => false)
-  }
- 
-        
-    }, [btnFromTop])
 
 
     return (
