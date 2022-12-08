@@ -2,7 +2,7 @@ import React, { useState, useRef} from 'react'
 import './Document.css'
 
 
- function Document({title, content}){
+ function Document(props){
 
     const [active, setActive] = useState(true)
     const ref = useRef()
@@ -18,8 +18,8 @@ import './Document.css'
  }
     return (
         <>
-        <h1 className="title">{title}</h1>
-        <p onScroll={scroll} ref={ref}  className="content">{content}</p>
+        <h1 className="title">{props.title}</h1>
+        <p onScroll={scroll} ref={ref}  className="content">{props.content}</p>
         <button disabled={active ? true : false} >I Agree</button>
       </>
     )
