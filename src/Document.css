@@ -1,0 +1,26 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+.container{
+    max-width: 250px;
+    height: 300px;
+    border: 1px solid red;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    padding: 15px 30px;
+}
+
+.title{
+    text-align: center;
+}
+
+button{
+    display: block;
+    margin: auto;
+    cursor: pointer;
+    
+}
