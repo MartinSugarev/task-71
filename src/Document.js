@@ -2,7 +2,7 @@ import React, { useState, useRef} from 'react'
 import './Document.css'
 
 
-export default function Document({title, content}){
+export  function Document({title, content}){
 
     const [active, setActive] = useState(true)
     const ref = useRef()
