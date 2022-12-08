@@ -8,10 +8,9 @@ export const Document = ({title, content}) => {
 
  const scroll = () => {
     const length = document.querySelector('.container').scrollTop  
-    const btn =  document.querySelector('button').offsetTop
     const a = length + document.querySelector('.container').clientHeight
      
-    if(a >= btn){
+    if(a >= document.querySelector('.container').scrollHeight){
         setActive(() => false)
     }
     
