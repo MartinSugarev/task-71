@@ -7,10 +7,10 @@ export const Document = ({title, content}) => {
     const [active, setActive] = useState(true)
 
  const scroll = () => {
-    const length = document.querySelector('.container').scrollTop  
-    const a = length + document.querySelector('.container').clientHeight
+    const length = document.querySelector('.content').scrollTop  
+    const a = length + document.querySelector('.content').clientHeight
      
-    if(a >= document.querySelector('.container').scrollHeight){
+    if(a >= document.querySelector('.content').scrollHeight){
         setActive(() => false)
     }
     
@@ -19,10 +19,10 @@ export const Document = ({title, content}) => {
 
 
     return (
-        <div onScroll={() => scroll()} className="container">
-            <h1 className="title">{title}</h1>
-            <p className="content">{content}</p>
-            <button disabled={active ? true : false} >I Agree</button>
-        </div>
+        <>
+        <h1 className="title">{title}</h1>
+        <p onScroll={scroll}  className="content">{content}</p>
+        <button disabled={active ? true : false} >I Agree</button>
+      </>
     )
 }
