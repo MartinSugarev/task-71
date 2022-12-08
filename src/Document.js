@@ -1,27 +1,25 @@
-import React, {useEffect, useState} from 'react'
+import React, { useState, useRef} from 'react'
 import './Document.css'
 
 
-export const Document = ({title, content}) => {
+export default function Document({title, content}){
 
     const [active, setActive] = useState(true)
+    const ref = useRef()
 
  const scroll = () => {
-    const length = document.querySelector('.content').scrollTop  
-    const a = length + document.querySelector('.content').clientHeight
+    const length = ref.current.scrollTop  
+    const a = length + ref.current.clientHeight
      
-    if(a >= document.querySelector('.content').scrollHeight){
+    if(a >= ref.current.scrollHeight){
         setActive(() => false)
     }
     
  }
-
-
-
     return (
         <>
         <h1 className="title">{title}</h1>
-        <p onScroll={scroll}  className="content">{content}</p>
+        <p onScroll={scroll} ref={ref}  className="content">{content}</p>
         <button disabled={active ? true : false} >I Agree</button>
       </>
     )
