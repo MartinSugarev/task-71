@@ -2,7 +2,7 @@ import React, { useState, useRef} from 'react'
 import './Document.css'
 
 
-export  function Document({title, content}){
+ function Document({title, content}){
 
     const [active, setActive] = useState(true)
     const ref = useRef()
@@ -24,3 +24,5 @@ export  function Document({title, content}){
       </>
     )
 }
+
+export default Document
